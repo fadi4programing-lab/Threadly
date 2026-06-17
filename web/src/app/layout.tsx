@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Clothes Store",
+  title: "Threadly",
   description: "Shop the latest fashion trends - online & offline",
 };
 

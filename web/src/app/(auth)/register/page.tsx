@@ -46,7 +46,7 @@ export default function RegisterPage() {
       <div className="w-full max-w-sm">
         <h1 className="text-center text-2xl font-bold">Create Account</h1>
         <p className="mt-2 text-center text-sm text-zinc-600 dark:text-zinc-400">
-          Join Clothes Store today
+          Join Threadly today
         </p>
 
         <form onSubmit={handleSubmit} className="mt-8 space-y-4">

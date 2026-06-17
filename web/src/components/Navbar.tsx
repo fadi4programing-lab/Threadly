@@ -16,7 +16,7 @@ export default function Navbar() {
       <div className="mx-auto flex h-14 sm:h-16 max-w-7xl items-center justify-between px-4">
         {/* Logo */}
         <Link href="/" className="text-lg sm:text-xl font-bold">
-          Clothes Store
+          Threadly
         </Link>
 
         {/* Desktop Nav */}

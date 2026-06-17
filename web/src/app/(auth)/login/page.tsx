@@ -37,7 +37,7 @@ export default function LoginPage() {
       <div className="w-full max-w-sm">
         <h1 className="text-center text-2xl font-bold">Login</h1>
         <p className="mt-2 text-center text-sm text-zinc-600 dark:text-zinc-400">
-          Welcome back to Clothes Store
+          Welcome back to Threadly
         </p>
 
         <form onSubmit={handleSubmit} className="mt-8 space-y-4">

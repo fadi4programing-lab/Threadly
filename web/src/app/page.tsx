@@ -2,7 +2,7 @@ import Link from "next/link";
 import HomeProducts from "@/components/HomeProducts";
 
 export const metadata = {
-  title: "Clothes Store | Shop the Latest Fashion",
+  title: "Threadly | Shop the Latest Fashion",
   description: "Shop the latest fashion trends. Works online and offline.",
 };
 
@@ -14,7 +14,7 @@ export default function Home() {
         <div className="mx-auto max-w-5xl px-6 sm:px-8 py-16 sm:py-32 text-center">
           <div className="space-y-4 sm:space-y-6">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-black dark:text-white">
-              Clothes Store
+              Threadly
             </h1>
             <p className="mx-auto max-w-md text-base sm:text-xl text-zinc-600 dark:text-zinc-400">
               Shop the latest fashion trends. Works online and offline.

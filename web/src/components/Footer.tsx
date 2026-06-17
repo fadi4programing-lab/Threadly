@@ -35,7 +35,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-8 border-t border-zinc-200 pt-8 text-center text-xs text-zinc-500 dark:border-zinc-800">
-          2026 Clothes Store. All rights reserved.
+          2026 Threadly. All rights reserved.
         </div>
       </div>
     </footer>
