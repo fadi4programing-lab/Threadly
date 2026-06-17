@@ -255,6 +255,19 @@ export default function ProductDetailPage() {
             {product.stock > 0 ? `${product.stock} in stock` : "Out of stock"}
           </p>
 
+          {/* Desktop Add to Cart */}
+          <div className="mt-6 hidden md:flex items-center gap-3">
+            <Button
+              onClick={handleAddToCart}
+              disabled={product.stock === 0 || addedToCart}
+              size="lg"
+              className="flex-1"
+            >
+              <ShoppingCart className="mr-2 h-4 w-4" />
+              {addedToCart ? "Added!" : "Add to Cart"}
+            </Button>
+          </div>
+
           {/* Offline notice */}
           {!isOnline && (
             <p className="mt-4 text-xs text-amber-600 bg-amber-50 rounded-lg p-3 dark:bg-amber-900/20">
