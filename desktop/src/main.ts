@@ -28,7 +28,7 @@ function createWindow() {
     mainWindow.loadURL("http://localhost:3000");
     mainWindow.webContents.openDevTools();
   } else {
-    mainWindow.loadFile(path.join(__dirname, "../dist/index.html"));
+    mainWindow.loadURL("https://threadly-mocha.vercel.app");
   }
 
   // Show when ready
