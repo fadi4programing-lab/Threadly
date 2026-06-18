@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Button, Input } from "@/components/ui";
+import { createClient } from "@/lib/supabase/client";
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -19,26 +20,34 @@ export default function RegisterPage() {
     setError("");
     setLoading(true);
 
-    const res = await fetch("/api/auth/register", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        email,
-        password,
-        full_name: fullName,
-        phone,
-      }),
+    const supabase = createClient();
+
+    const { error: authError } = await supabase.auth.signUp({
+      email,
+      password,
+      options: {
+        data: { full_name: fullName, phone },
+      },
     });
 
-    const data = await res.json();
-
-    if (data.error) {
-      setError(data.error);
+    if (authError) {
+      setError(authError.message);
       setLoading(false);
       return;
     }
 
-    router.push("/login");
+    // Auto-login after register
+    const { error: loginError } = await supabase.auth.signInWithPassword({
+      email,
+      password,
+    });
+
+    if (loginError) {
+      router.push("/login");
+      return;
+    }
+
+    window.location.href = "/dashboard";
   };
 
   return (

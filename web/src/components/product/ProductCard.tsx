@@ -50,7 +50,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           e.stopPropagation();
           toggleWishlist(product.id);
         }}
-        className="absolute right-3 top-3 rounded-full bg-white/80 p-2 opacity-0 transition-all group-hover:opacity-100 dark:bg-black/80"
+        className="absolute right-3 top-3 rounded-full bg-white/80 p-2 opacity-100 transition-all group-hover:opacity-100 dark:bg-black/80 md:opacity-0"
       >
         <Heart
           className={`h-4 w-4 transition-colors ${
