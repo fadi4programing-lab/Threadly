@@ -2,8 +2,9 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { useParams, useRouter } from "next/navigation";
-import { ShoppingCart, ChevronLeft, Star, WifiOff, Send } from "lucide-react";
+import { ShoppingCart, ChevronLeft, Star, WifiOff, Send, Heart } from "lucide-react";
 import { useCart } from "@/lib/hooks/useCart";
+import { useWishlist } from "@/lib/hooks/useWishlist";
 import { useOnlineStatus } from "@/lib/hooks/useOnlineStatus";
 import { Button, Skeleton } from "@/components/ui";
 import { Product, Review } from "@/lib/types";
@@ -13,6 +14,7 @@ export default function ProductDetailPage() {
   const params = useParams();
   const router = useRouter();
   const { addItem } = useCart();
+  const { isWishlisted, toggleWishlist } = useWishlist();
   const isOnline = useOnlineStatus();
 
   const [product, setProduct] = useState<Product | null>(null);
@@ -232,7 +234,21 @@ export default function ProductDetailPage() {
 
         {/* Details */}
         <div className="pb-24 md:pb-0">
-          <h1 className="text-xl sm:text-2xl font-bold">{product.name}</h1>
+          <div className="flex items-start justify-between gap-3">
+            <h1 className="text-xl sm:text-2xl font-bold">{product.name}</h1>
+            <button
+              onClick={() => toggleWishlist(product.id)}
+              className="mt-1 flex-shrink-0 rounded-full p-2 hover:bg-zinc-100 dark:hover:bg-zinc-800"
+            >
+              <Heart
+                className={`h-5 w-5 transition-colors ${
+                  isWishlisted(product.id)
+                    ? "fill-red-500 text-red-500"
+                    : "text-zinc-400"
+                }`}
+              />
+            </button>
+          </div>
 
           <div className="mt-3 flex items-center gap-3">
             <span className="text-2xl font-bold">

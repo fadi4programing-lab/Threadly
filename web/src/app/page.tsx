@@ -1,5 +1,6 @@
 import Link from "next/link";
 import HomeProducts from "@/components/HomeProducts";
+import HeroButtons from "@/components/HeroButtons";
 
 export const metadata = {
   title: "Threadly | Shop the Latest Fashion",
@@ -19,20 +20,7 @@ export default function Home() {
             <p className="mx-auto max-w-md text-base sm:text-xl text-zinc-600 dark:text-zinc-400">
               Shop the latest fashion trends. Works online and offline.
             </p>
-            <div className="flex justify-center gap-4 mt-8">
-              <Link
-                href="/products"
-                className="px-8 py-3 bg-black text-white rounded-full hover:bg-zinc-800 transition-colors dark:bg-white dark:text-black dark:hover:bg-zinc-200"
-              >
-                Browse Collection
-              </Link>
-              <Link
-                href="/login"
-                className="px-8 py-3 border border-black/[.08] rounded-full hover:bg-black/[.04] transition-colors dark:border-white/[.145] dark:hover:bg-[#1a1a1a]"
-              >
-                Sign In
-              </Link>
-            </div>
+            <HeroButtons />
           </div>
         </div>
       </section>
