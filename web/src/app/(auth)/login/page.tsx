@@ -32,7 +32,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center px-4">
+    <div className="flex min-h-screen items-start justify-center overflow-y-auto px-4 py-12 sm:items-center">
       <div className="w-full max-w-sm">
         <h1 className="text-center text-2xl font-bold">Login</h1>
         <p className="mt-2 text-center text-sm text-zinc-600 dark:text-zinc-400">
